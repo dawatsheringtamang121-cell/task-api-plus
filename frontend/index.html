@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Welcome to Task Board</title>
+  <link rel="icon" href="data:," />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main>
+    <header class="head">
+      <h1>Welcome to Task Board</h1>
+      <p id="today" class="muted"></p>
+    </header>
+
+    <section id="summary" class="progress" aria-live="polite"></section>
+
+    <form id="task-form" class="composer" novalidate>
+      <input id="title" type="text" placeholder="What needs doing?" maxlength="255" aria-label="Task title" required />
+      <select id="priority" aria-label="Priority">
+        <option value="low">Low priority</option>
+        <option value="medium" selected>Medium priority</option>
+        <option value="high">High priority</option>
+      </select>
+      <input id="due" type="date" aria-label="Due date" />
+      <button type="submit" class="primary">Add task</button>
+    </form>
+    <p id="form-msg" class="msg" role="status"></p>
+
+    <div class="toolbar">
+      <div class="tabs" role="group" aria-label="Filter by status">
+        <button type="button" data-status="" class="tab active">All</button>
+        <button type="button" data-status="pending" class="tab">Pending</button>
+        <button type="button" data-status="overdue" class="tab">Overdue</button>
+        <button type="button" data-status="done" class="tab">Done</button>
+      </div>
+      <div class="controls">
+        <select id="sort" aria-label="Sort tasks">
+          <option value="newest">Newest first</option>
+          <option value="due">Due soonest</option>
+          <option value="priority">Highest priority</option>
+        </select>
+        <input id="search" type="search" placeholder="Search tasks" aria-label="Search tasks" />
+      </div>
+    </div>
+
+    <ul id="list" class="list"></ul>
+    <p id="empty" class="empty" hidden>No tasks to show. Add one above to get started.</p>
+
+    <div class="foot">
+      <button type="button" id="clear-done" class="link">Clear completed tasks</button>
+    </div>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>

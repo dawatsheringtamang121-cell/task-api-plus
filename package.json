@@ -1,0 +1,19 @@
+{
+  "name": "task-api-plus",
+  "version": "1.0.0",
+  "description": "Task API with priority, due dates and filters (Express + MySQL, MVC)",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "npx nodemon server.js",
+    "test-db": "node test-db.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "mysql2": "^3.10.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.4"
+  }
+}
